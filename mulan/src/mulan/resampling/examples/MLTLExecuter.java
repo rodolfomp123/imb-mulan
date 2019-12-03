@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 import mulan.data.InvalidDataFormatException;
 import mulan.data.MultiLabelInstances;
-import mulan.resampling.MLTomekLink;
+import mulan.resampling.MLTL;
 import weka.core.Utils;
 
 public class MLTLExecuter {
@@ -24,7 +24,7 @@ public class MLTLExecuter {
             System.out.println("Loading the dataset...");
     		MultiLabelInstances originalDataset = new MultiLabelInstances(directory + arffFilename, directory + xmlFilename);
     		System.out.println("Resampling the dataset...");
-    		MLTomekLink mltl = new MLTomekLink(originalDataset, directory + xmlFilename);
+    		MLTL mltl = new MLTL(originalDataset, directory + xmlFilename);
     		MultiLabelInstances resampledDataset = mltl.resample();
     		System.out.println("New number of instances: " + resampledDataset.getNumInstances());
     		System.out.println("Writing result dataset...");

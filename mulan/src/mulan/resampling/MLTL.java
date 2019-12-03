@@ -15,12 +15,29 @@ import weka.core.Instance;
 <!-- globalinfo-start -->
 * Class implementing the MultiLabel Tomek Link Undersampling. For more information, see<br>
 * <br>
+* Rodolfo Miranda Pereira and Yandre Maldonado e Gomes da Costa and Carlos Nascimento Silla Jr.: MLTL: A multi-label approach for the Tomek Link undersampling algorithm. In: Neurocomputing, 2020.
+* <br>
+<!-- globalinfo-end -->
+*
+<!-- technical-bibtex-start -->
+* BibTeX:
+* <pre>
+* @article{2020pereiramltl,
+*  author = {Pereira, R. M and Costa, Y. M. G. and Silla Jr., C. N.},
+*  title = {MLTL: A multi-label approach for the Tomek Link undersampling algorithm},
+*  journal = {Neurocomputing},
+*  year = {2020},
+*  publisher={Elsevier}
+*}
+*
+* </pre>
+* <br>
 <!-- technical-bibtex-end -->
 *
 * @author Rodolfo Miranda Pereira
 * @version 2017.11.15
 */
-public class MLTomekLink {
+public class MLTL {
 
 	private MultiLabelInstances data;
 	private String xmlLabels;
@@ -28,7 +45,7 @@ public class MLTomekLink {
 	private Boolean isCleaningMethod;
 	private ImbalanceMetrics metrics;
 	
-	public MLTomekLink(MultiLabelInstances data, String xmlLabels)
+	public MLTL(MultiLabelInstances data, String xmlLabels)
 			throws InvalidDataFormatException {
 		this.data = new MultiLabelInstances(data.getDataSet(), xmlLabels);
 		this.isCleaningMethod = Boolean.FALSE;
@@ -36,7 +53,7 @@ public class MLTomekLink {
 		this.metrics = new ImbalanceMetrics(data.getDataSet(), data.getLabelAttributes());
 	}
 	
-	public MLTomekLink(MultiLabelInstances data, String xmlLabels, Double threshold)
+	public MLTL(MultiLabelInstances data, String xmlLabels, Double threshold)
 			throws InvalidDataFormatException {
 		this.data = new MultiLabelInstances(data.getDataSet(), xmlLabels);
 		this.threshold = threshold;
@@ -45,7 +62,7 @@ public class MLTomekLink {
 		this.metrics = new ImbalanceMetrics(data.getDataSet(), data.getLabelAttributes());
 	}
 	
-	public MLTomekLink(MultiLabelInstances data, String xmlLabels, Boolean isCleaningMethod)
+	public MLTL(MultiLabelInstances data, String xmlLabels, Boolean isCleaningMethod)
 			throws InvalidDataFormatException {
 		this.data = new MultiLabelInstances(data.getDataSet(), xmlLabels);
 		this.isCleaningMethod = isCleaningMethod;
@@ -53,7 +70,7 @@ public class MLTomekLink {
 		this.metrics = new ImbalanceMetrics(data.getDataSet(), data.getLabelAttributes());
 	}
 	
-	public MLTomekLink(
+	public MLTL(
 			MultiLabelInstances data, String xmlLabels, Double threshold, Boolean isCleaningMethod)
 			throws InvalidDataFormatException {
 		this.data = new MultiLabelInstances(data.getDataSet(), xmlLabels);
