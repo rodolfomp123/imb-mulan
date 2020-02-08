@@ -38,6 +38,9 @@ If you used IMB-Mulan in your research or project, please cite our work:
    author = {Pereira, R. M and Costa, Y. M. G. and Silla Jr., C. N.},
    title = {MLTL: A multi-label approach for the Tomek Link undersampling algorithm},
    journal = {Neurocomputing},
+   volume={383},
+   number={C},
+   pages={95--105},
    year = {2020},
    publisher={Elsevier}
 }
